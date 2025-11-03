@@ -14,15 +14,15 @@
     <header
         class="sticky top-0 z-40 border-b bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:border-gray-800 dark:bg-gray-950/80">
         <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-            <a href="./index.html" class="flex items-center gap-2 text-lg font-semibold">
+            <a href="./index.php" class="flex items-center gap-2 text-lg font-semibold">
                 <span class="inline-flex h-8 w-8 items-center justify-center rounded bg-indigo-600 text-white">A</span>
                 APICUR TSS — Musanze
             </a>
             <nav class="hidden gap-6 text-sm font-medium sm:flex">
-                <a class="nav-link hover:text-indigo-600" href="./index.html">Home</a>
-                <a class="nav-link hover:text-indigo-600" href="./about.html">About</a>
-                <a class="nav-link active hover:text-indigo-600" href="./announcements.html">Announcements</a>
-                <a class="nav-link hover:text-indigo-600" href="./contact.html">Contact</a>
+                <a class="nav-link hover:text-indigo-600" href="./index.php">Home</a>
+                <a class="nav-link hover:text-indigo-600" href="./about.php">About</a>
+                <a class="nav-link active hover:text-indigo-600" href="./announcements.php">Announcements</a>
+                <a class="nav-link hover:text-indigo-600" href="./contact.php">Contact</a>
             </nav>
         </div>
     </header>
@@ -91,17 +91,26 @@
                 <p class="text-sm text-gray-600 dark:text-gray-400">© <span id="year"></span> APICUR TSS, Musanze. All
                     rights reserved.</p>
                 <nav class="flex gap-4 text-sm">
-                    <a class="hover:text-indigo-600" href="./about.html">About</a>
-                    <a class="hover:text-indigo-600" href="./announcements.html">Announcements</a>
-                    <a class="hover:text-indigo-600" href="./contact.html">Contact</a>
+                    <a class="hover:text-indigo-600" href="./about.php">About</a>
+                    <a class="hover:text-indigo-600" href="./announcements.php">Announcements</a>
+                    <a class="hover:text-indigo-600" href="./contact.php">Contact</a>
                 </nav>
             </div>
         </div>
     </footer>
     <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-        const observer = new IntersectionObserver((entries) => { entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('is-visible'); observer.unobserve(e.target) } }) }, { threshold: .15 });
-        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+            if (e.isIntersecting) {
+                e.target.classList.add('is-visible');
+                observer.unobserve(e.target)
+            }
+        })
+    }, {
+        threshold: .15
+    });
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
     </script>
 </body>
 

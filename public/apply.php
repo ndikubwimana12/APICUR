@@ -199,15 +199,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
 
                 <?php if ($success): ?>
-                    <div class="mb-6 p-4 bg-green-50 border-l-4 border-green-500 text-green-700 rounded">
-                        <i class="fas fa-check-circle mr-2"></i><?php echo $success; ?>
-                    </div>
+                <div class="mb-6 p-4 bg-green-50 border-l-4 border-green-500 text-green-700 rounded">
+                    <i class="fas fa-check-circle mr-2"></i><?php echo $success; ?>
+                </div>
                 <?php endif; ?>
 
                 <?php if ($error): ?>
-                    <div class="mb-6 p-4 bg-red-50 border-l-4 border-red-500 text-red-700 rounded">
-                        <i class="fas fa-exclamation-circle mr-2"></i><?php echo $error; ?>
-                    </div>
+                <div class="mb-6 p-4 bg-red-50 border-l-4 border-red-500 text-red-700 rounded">
+                    <i class="fas fa-exclamation-circle mr-2"></i><?php echo $error; ?>
+                </div>
                 <?php endif; ?>
 
                 <form method="POST" enctype="multipart/form-data" class="space-y-6">
@@ -218,27 +218,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-2">First Name *</label>
-                                <input type="text" name="first_name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="First name">
+                                <input type="text" name="first_name" required
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    placeholder="First name">
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Middle Name</label>
-                                <input type="text" name="middle_name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Middle name">
+                                <input type="text" name="middle_name"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    placeholder="Middle name">
                             </div>
                         </div>
 
                         <div class="mt-4">
                             <label class="block text-sm font-medium text-gray-700 mb-2">Last Name *</label>
-                            <input type="text" name="last_name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Last name">
+                            <input type="text" name="last_name" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                placeholder="Last name">
                         </div>
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Date of Birth *</label>
-                                <input type="date" name="date_of_birth" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <input type="date" name="date_of_birth" required
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Gender *</label>
-                                <select name="gender" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <select name="gender" required
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
                                     <option value="">Select Gender</option>
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
@@ -249,22 +257,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
-                                <input type="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="your@email.com">
+                                <input type="email" name="email"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    placeholder="your@email.com">
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
-                                <input type="tel" name="phone" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Phone number">
+                                <input type="tel" name="phone" required
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    placeholder="Phone number">
                             </div>
                         </div>
 
                         <div class="mt-4">
                             <label class="block text-sm font-medium text-gray-700 mb-2">Address</label>
-                            <textarea name="address" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your residential address"></textarea>
+                            <textarea name="address" rows="3"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                placeholder="Your residential address"></textarea>
                         </div>
 
                         <div class="mt-4">
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Previous School/Institution</label>
-                            <input type="text" name="previous_school" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Name of previous school">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Previous
+                                School/Institution</label>
+                            <input type="text" name="previous_school"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                placeholder="Name of previous school">
                         </div>
                     </div>
 
@@ -274,17 +291,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">Parent/Guardian Name *</label>
-                            <input type="text" name="parent_name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Full name">
+                            <input type="text" name="parent_name" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                placeholder="Full name">
                         </div>
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
-                                <input type="tel" name="parent_phone" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Phone number">
+                                <input type="tel" name="parent_phone" required
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    placeholder="Phone number">
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
-                                <input type="email" name="parent_email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Email address">
+                                <input type="email" name="parent_email"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    placeholder="Email address">
                             </div>
                         </div>
                     </div>
@@ -297,34 +320,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <label class="block text-sm font-medium text-gray-700 mb-2">Training Level *</label>
                             <div class="flex gap-3 flex-wrap">
                                 <?php foreach ($levels as $level): ?>
-                                    <label class="flex items-center cursor-pointer">
-                                        <input type="radio" name="level" value="<?php echo $level; ?>" required
-                                            onchange="location.href='?level=<?php echo urlencode($level); ?>';"
-                                            <?php if ($selected_level === $level) echo 'checked'; ?>
-                                            class="mr-2">
-                                        <span class="text-gray-700"><?php echo $level; ?></span>
-                                    </label>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="radio" name="level" value="<?php echo $level; ?>" required
+                                        onchange="location.href='?level=<?php echo urlencode($level); ?>';"
+                                        <?php if ($selected_level === $level) echo 'checked'; ?> class="mr-2">
+                                    <span class="text-gray-700"><?php echo $level; ?></span>
+                                </label>
                                 <?php endforeach; ?>
                             </div>
                         </div>
 
                         <?php if ($selected_level && count($modules) > 0): ?>
-                            <div class="mt-4">
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Trade/Module *</label>
-                                <select name="module_id" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                                    <option value="">Select a Trade/Module</option>
-                                    <?php foreach ($modules as $module): ?>
-                                        <option value="<?php echo $module['id']; ?>">
-                                            <?php echo htmlspecialchars($module['module_name'] . ' (' . $module['module_code'] . ')'); ?>
-                                            - <?php echo $module['total_hours']; ?> hours
-                                        </option>
-                                    <?php endforeach; ?>
-                                </select>
-                            </div>
+                        <div class="mt-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Trade/Module *</label>
+                            <select name="module_id" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="">Select a Trade/Module</option>
+                                <?php foreach ($modules as $module): ?>
+                                <option value="<?php echo $module['id']; ?>">
+                                    <?php echo htmlspecialchars($module['module_name'] . ' (' . $module['module_code'] . ')'); ?>
+                                    - <?php echo $module['total_hours']; ?> hours
+                                </option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
                         <?php elseif ($selected_level): ?>
-                            <div class="mt-4 p-4 bg-yellow-50 border border-yellow-200 rounded text-yellow-700">
-                                <i class="fas fa-info-circle mr-2"></i> No programs available for selected level
-                            </div>
+                        <div class="mt-4 p-4 bg-yellow-50 border border-yellow-200 rounded text-yellow-700">
+                            <i class="fas fa-info-circle mr-2"></i> No programs available for selected level
+                        </div>
                         <?php endif; ?>
                     </div>
 
@@ -334,23 +357,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">Result Slip/Transcript</label>
-                            <input type="file" name="result_slip" accept=".pdf,.jpg,.jpeg,.png" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <input type="file" name="result_slip" accept=".pdf,.jpg,.jpeg,.png"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
                             <p class="text-xs text-gray-500 mt-1">PDF, JPG, or PNG (Max 5MB)</p>
                         </div>
 
                         <div class="mt-4">
                             <label class="block text-sm font-medium text-gray-700 mb-2">Qualification Document</label>
-                            <input type="file" name="qualification_doc" accept=".pdf,.jpg,.jpeg,.png" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <input type="file" name="qualification_doc" accept=".pdf,.jpg,.jpeg,.png"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
                             <p class="text-xs text-gray-500 mt-1">PDF, JPG, or PNG (Max 5MB)</p>
                         </div>
                     </div>
 
                     <!-- Submit -->
                     <div class="flex gap-4">
-                        <button type="submit" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition">
+                        <button type="submit"
+                            class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition">
                             <i class="fas fa-paper-plane mr-2"></i> Submit Application
                         </button>
-                        <a href="index.html" class="flex-1 bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-3 rounded-lg transition text-center">
+                        <a href="index.php"
+                            class="flex-1 bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-3 rounded-lg transition text-center">
                             <i class="fas fa-times mr-2"></i> Cancel
                         </a>
                     </div>
