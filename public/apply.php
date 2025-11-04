@@ -185,41 +185,119 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Student Application - <?php echo SITE_NAME; ?></title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        select,
+        textarea {
+            font-size: 16px !important;
+        }
+
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 1.875rem !important;
+            }
+
+            h3 {
+                font-size: 1.125rem !important;
+            }
+
+            .container {
+                padding: 0.5rem !important;
+            }
+
+            .max-w-2xl {
+                max-width: 100% !important;
+                padding: 0.5rem !important;
+            }
+        }
+    </style>
 </head>
 
 <body class="bg-gray-50">
-    <?php include '../includes/header.php'; ?>
+    <!-- Navigation Header -->
+    <header
+        class="sticky top-0 z-40 border-b bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:border-gray-800 dark:bg-gray-950/80">
+        <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+            <a href="./index.php" class="flex items-center gap-2 text-lg font-semibold">
+                <span class="inline-flex h-8 w-8 items-center justify-center rounded bg-indigo-600 text-white">A</span>
+                APICUR TSS
+            </a>
+            <nav class="hidden gap-6 text-sm font-medium sm:flex">
+                <a class="hover:text-indigo-600" href="./index.php">Home</a>
+                <a class="hover:text-indigo-600" href="./about.php">About</a>
+                <a class="hover:text-indigo-600" href="./programs.php">Programs</a>
+                <a class="hover:text-indigo-600" href="./admissions.php">Admissions</a>
+                <a class="hover:text-indigo-600" href="./contact.php">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
 
-    <div class="container mx-auto px-4 py-8">
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="mobile-menu fixed inset-x-0 top-full z-40 bg-white/95 backdrop-blur-md border-b border-gray-200/50 dark:bg-gray-950/95 dark:border-gray-800/50 md:hidden">
+            <div class="mx-auto max-w-7xl px-4 py-6">
+                <nav class="flex flex-col space-y-4">
+                    <a class="hover:text-indigo-600 py-2" href="./index.php">Home</a>
+                    <a class="hover:text-indigo-600 py-2" href="./about.php">About</a>
+                    <a class="hover:text-indigo-600 py-2" href="./programs.php">Programs</a>
+                    <a class="hover:text-indigo-600 py-2" href="./admissions.php">Admissions</a>
+                    <a class="hover:text-indigo-600 py-2" href="./contact.php">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div
+        class="container mx-auto px-4 py-8 bg-gradient-to-br from-lime-50 to-green-50 dark:from-lime-950 dark:to-green-900 min-h-screen">
         <div class="max-w-2xl mx-auto">
-            <div class="bg-white rounded-xl shadow-lg p-8">
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 sm:p-8">
                 <div class="text-center mb-8">
-                    <h1 class="text-3xl font-bold text-gray-800 mb-2">Apply to <?php echo SITE_NAME; ?></h1>
-                    <p class="text-gray-600">Begin your journey in vocational training</p>
+                    <h1 class="text-2xl sm:text-3xl font-bold text-gray-800 dark:text-white mb-2">Apply to
+                        <?php echo SITE_NAME; ?></h1>
+                    <p class="text-sm sm:text-base text-gray-600 dark:text-gray-300">Begin your journey in vocational
+                        training</p>
                 </div>
 
                 <?php if ($success): ?>
-                <div class="mb-6 p-4 bg-green-50 border-l-4 border-green-500 text-green-700 rounded">
-                    <i class="fas fa-check-circle mr-2"></i><?php echo $success; ?>
-                </div>
+                    <div class="mb-6 p-4 bg-green-50 border-l-4 border-green-500 text-green-700 rounded">
+                        <i class="fas fa-check-circle mr-2"></i><?php echo $success; ?>
+                    </div>
                 <?php endif; ?>
 
                 <?php if ($error): ?>
-                <div class="mb-6 p-4 bg-red-50 border-l-4 border-red-500 text-red-700 rounded">
-                    <i class="fas fa-exclamation-circle mr-2"></i><?php echo $error; ?>
-                </div>
+                    <div class="mb-6 p-4 bg-red-50 border-l-4 border-red-500 text-red-700 rounded">
+                        <i class="fas fa-exclamation-circle mr-2"></i><?php echo $error; ?>
+                    </div>
                 <?php endif; ?>
 
                 <form method="POST" enctype="multipart/form-data" class="space-y-6">
                     <!-- Personal Information -->
                     <div class="border-b pb-6">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-4">Personal Information</h3>
+                        <h3 class="text-base sm:text-lg font-semibold text-gray-800 mb-4">Personal Information</h3>
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">First Name *</label>
+                                <label class="block text-xs sm:text-sm font-medium text-gray-700 mb-2">First Name
+                                    *</label>
                                 <input type="text" name="first_name" required
-                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-base"
                                     placeholder="First name">
                             </div>
                             <div>
@@ -287,7 +365,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <!-- Parent/Guardian Information -->
                     <div class="border-b pb-6">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-4">Parent/Guardian Information</h3>
+                        <h3 class="text-base sm:text-lg font-semibold text-gray-800 mb-4">Parent/Guardian Information
+                        </h3>
 
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">Parent/Guardian Name *</label>
@@ -314,46 +393,46 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <!-- Program Selection -->
                     <div class="border-b pb-6">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-4">Program Selection</h3>
+                        <h3 class="text-base sm:text-lg font-semibold text-gray-800 mb-4">Program Selection</h3>
 
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">Training Level *</label>
                             <div class="flex gap-3 flex-wrap">
                                 <?php foreach ($levels as $level): ?>
-                                <label class="flex items-center cursor-pointer">
-                                    <input type="radio" name="level" value="<?php echo $level; ?>" required
-                                        onchange="location.href='?level=<?php echo urlencode($level); ?>';"
-                                        <?php if ($selected_level === $level) echo 'checked'; ?> class="mr-2">
-                                    <span class="text-gray-700"><?php echo $level; ?></span>
-                                </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="level" value="<?php echo $level; ?>" required
+                                            onchange="location.href='?level=<?php echo urlencode($level); ?>';"
+                                            <?php if ($selected_level === $level) echo 'checked'; ?> class="mr-2">
+                                        <span class="text-gray-700"><?php echo $level; ?></span>
+                                    </label>
                                 <?php endforeach; ?>
                             </div>
                         </div>
 
                         <?php if ($selected_level && count($modules) > 0): ?>
-                        <div class="mt-4">
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Trade/Module *</label>
-                            <select name="module_id" required
-                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                                <option value="">Select a Trade/Module</option>
-                                <?php foreach ($modules as $module): ?>
-                                <option value="<?php echo $module['id']; ?>">
-                                    <?php echo htmlspecialchars($module['module_name'] . ' (' . $module['module_code'] . ')'); ?>
-                                    - <?php echo $module['total_hours']; ?> hours
-                                </option>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
+                            <div class="mt-4">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Trade/Module *</label>
+                                <select name="module_id" required
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    <option value="">Select a Trade/Module</option>
+                                    <?php foreach ($modules as $module): ?>
+                                        <option value="<?php echo $module['id']; ?>">
+                                            <?php echo htmlspecialchars($module['module_name'] . ' (' . $module['module_code'] . ')'); ?>
+                                            - <?php echo $module['total_hours']; ?> hours
+                                        </option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
                         <?php elseif ($selected_level): ?>
-                        <div class="mt-4 p-4 bg-yellow-50 border border-yellow-200 rounded text-yellow-700">
-                            <i class="fas fa-info-circle mr-2"></i> No programs available for selected level
-                        </div>
+                            <div class="mt-4 p-4 bg-yellow-50 border border-yellow-200 rounded text-yellow-700">
+                                <i class="fas fa-info-circle mr-2"></i> No programs available for selected level
+                            </div>
                         <?php endif; ?>
                     </div>
 
                     <!-- Document Upload -->
                     <div class="border-b pb-6">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-4">Required Documents</h3>
+                        <h3 class="text-base sm:text-lg font-semibold text-gray-800 mb-4">Required Documents</h3>
 
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">Result Slip/Transcript</label>
@@ -387,6 +466,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 
     <?php include '../includes/footer.php'; ?>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('open');
+            });
+
+            // Close menu when clicking on a link
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('open');
+                });
+            });
+        }
+    </script>
 </body>
 
 </html>

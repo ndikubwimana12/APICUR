@@ -232,6 +232,101 @@
             transition-duration: 0.01ms !important;
         }
     }
+
+    .mobile-menu {
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .mobile-menu.open {
+        transform: translateX(0);
+    }
+
+    /* Mobile Responsive Improvements */
+    @media (max-width: 640px) {
+        .hero-gradient {
+            min-h-auto;
+            padding-top: 100px;
+            padding-bottom: 40px;
+        }
+
+        .hero-gradient h1 {
+            font-size: 2rem !important;
+            line-height: 1.2;
+        }
+
+        .floating-elements {
+            display: none;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+            width: 100%;
+            padding: 12px 20px !important;
+            font-size: 14px !important;
+        }
+
+        .grid {
+            gap: 1rem !important;
+        }
+
+        h2 {
+            font-size: 1.75rem !important;
+        }
+
+        h3 {
+            font-size: 1.125rem !important;
+        }
+
+        .gap-8 {
+            gap: 1rem !important;
+        }
+
+        .py-20 {
+            padding-top: 1.5rem !important;
+            padding-bottom: 1.5rem !important;
+        }
+
+        .text-lg {
+            font-size: 0.95rem !important;
+        }
+
+        .program-card {
+            padding: 1.25rem !important;
+        }
+    }
+
+    .mobile-menu {
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .mobile-menu.open {
+        transform: translateX(0);
+    }
+
+    @media (max-width: 768px) {
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            position: fixed;
+            top: 100%;
+            width: 100%;
+            z-index: 40;
+        }
+
+        .mobile-menu.open {
+            max-height: 500px;
+            overflow-y: auto;
+            transform: none;
+        }
+
+        .nav-link::after {
+            bottom: -4px;
+            height: 2px;
+        }
+    }
     </style>
 </head>
 
@@ -262,13 +357,43 @@
             </nav>
 
             <div class="flex items-center gap-4">
+                <a href="../auth/login.php"
+                    class="text-sm font-medium text-gray-700 hover:text-indigo-600 dark:text-gray-300 hidden sm:block">Staff
+                    Login</a>
+                <a href="../auth/register.php" class="btn-primary hidden sm:block">Register</a>
                 <a href="./admissions.php" class="btn-primary hidden sm:block">Apply Now</a>
-                <button class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
+                <button id="mobile-menu-button"
+                    class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
                 </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="mobile-menu fixed inset-x-0 top-full z-40 bg-white/95 backdrop-blur-md border-b border-gray-200/50 dark:bg-gray-950/95 dark:border-gray-800/50 md:hidden">
+            <div class="mx-auto max-w-7xl px-4 py-6">
+                <nav class="flex flex-col space-y-4">
+                    <a class="nav-link text-gray-700 hover:text-indigo-600 dark:text-gray-300 py-2"
+                        href="./index.php">Home</a>
+                    <a class="nav-link text-gray-700 hover:text-indigo-600 dark:text-gray-300 py-2"
+                        href="./about.php">About</a>
+                    <a class="nav-link text-gray-700 hover:text-indigo-600 dark:text-gray-300 py-2"
+                        href="./programs.php">Programs</a>
+                    <a class="nav-link text-gray-700 hover:text-indigo-600 dark:text-gray-300 py-2"
+                        href="./admissions.php">Admissions</a>
+                    <a class="nav-link text-gray-700 hover:text-indigo-600 dark:text-gray-300 py-2"
+                        href="./contact.php">Contact</a>
+                    <hr class="my-2 border-gray-200 dark:border-gray-700" />
+                    <a class="nav-link text-gray-700 hover:text-indigo-600 dark:text-gray-300 py-2"
+                        href="../auth/login.php">Staff Login</a>
+                    <a class="nav-link text-gray-700 hover:text-indigo-600 dark:text-gray-300 py-2"
+                        href="../auth/register.php">Staff Register</a>
+                    <a href="./admissions.php" class="btn-primary text-center mt-4">Apply Now</a>
+                </nav>
             </div>
         </div>
     </header>
@@ -288,20 +413,22 @@
                     Academic Excellence • Musanze, Rwanda
                 </div>
 
-                <h1 class="text-5xl font-black tracking-tight text-white sm:text-6xl lg:text-7xl">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black tracking-tight text-white">
                     Our
                     <span class="block bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">
                         Programs
                     </span>
                 </h1>
 
-                <p class="mt-8 text-xl leading-relaxed text-white/90 max-w-3xl mx-auto">
+                <p
+                    class="mt-4 sm:mt-8 text-sm sm:text-lg md:text-xl leading-relaxed text-white/90 max-w-3xl mx-auto px-2">
                     Discover a range of educational pathways designed to prepare you for success in academics,
                     technology, and beyond.
                 </p>
 
-                <div class="mt-12">
-                    <a href="./admissions.php" class="btn-primary text-lg px-8 py-4">
+                <div class="mt-8 sm:mt-12">
+                    <a href="./admissions.php"
+                        class="btn-primary text-sm sm:text-lg px-6 sm:px-8 py-3 sm:py-4 inline-flex items-center justify-center">
                         Apply Now
                         <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -313,7 +440,7 @@
         </div>
     </section>
 
-    <section class="py-20 bg-white dark:bg-gray-900">
+    <section class="py-20 bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-cyan-950 dark:to-blue-900">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl">Academic Programs</h2>
@@ -485,6 +612,23 @@
     </footer>
 
     <script>
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+        });
+
+        // Close menu when clicking on a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+            });
+        });
+    }
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((e) => {
             if (e.isIntersecting) {

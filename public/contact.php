@@ -8,194 +8,283 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <meta name="color-scheme" content="light dark" />
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
-    * {
-        font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    }
-
-    :root {
-        --brand-50: #eef2ff;
-        --brand-100: #e0e7ff;
-        --brand-300: #a5b4fc;
-        --brand-400: #818cf8;
-        --brand-500: #6366f1;
-        --brand-600: #4f46e5;
-        --brand-700: #4338ca;
-        --brand-800: #3730a3;
-        --brand-900: #312e81;
-        --surface: 255, 255, 255;
-        --surface-dark: 3, 7, 18;
-    }
-
-    .hero-gradient {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        position: relative;
-        overflow: hidden;
-    }
-
-    .hero-gradient::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%);
-        animation: gradientShift 20s ease infinite;
-    }
-
-    @keyframes gradientShift {
-
-        0%,
-        100% {
-            opacity: 0.9;
-        }
-
-        50% {
-            opacity: 0.7;
-        }
-    }
-
-    .glass-card {
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 24px;
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .dark .glass-card {
-        background: rgba(15, 23, 42, 0.9);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .glass-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 35px 70px -12px rgba(0, 0, 0, 0.15);
-    }
-
-    .floating-elements {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-    }
-
-    .floating-shape {
-        position: absolute;
-        opacity: 0.1;
-        animation: float 6s ease-in-out infinite;
-    }
-
-    .floating-shape:nth-child(1) {
-        top: 10%;
-        left: 10%;
-        animation-delay: 0s;
-    }
-
-    .floating-shape:nth-child(2) {
-        top: 20%;
-        right: 10%;
-        animation-delay: 2s;
-    }
-
-    .floating-shape:nth-child(3) {
-        bottom: 20%;
-        left: 15%;
-        animation-delay: 4s;
-    }
-
-    @keyframes float {
-
-        0%,
-        100% {
-            transform: translateY(0px) rotate(0deg);
-        }
-
-        50% {
-            transform: translateY(-20px) rotate(5deg);
-        }
-    }
-
-    .btn-primary {
-        background: linear-gradient(135deg, var(--brand-600) 0%, var(--brand-700) 100%);
-        border: none;
-        border-radius: 50px;
-        padding: 16px 32px;
-        color: white;
-        font-weight: 600;
-        font-size: 16px;
-        cursor: pointer;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: 0 10px 30px -12px rgba(79, 70, 229, 0.4);
-        position: relative;
-        overflow: hidden;
-    }
-
-    .btn-primary::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-        transition: left 0.5s ease;
-    }
-
-    .btn-primary:hover::before {
-        left: 100%;
-    }
-
-    .btn-primary:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 20px 40px -12px rgba(79, 70, 229, 0.6);
-    }
-
-    .nav-link {
-        position: relative;
-        font-weight: 500;
-        transition: all 0.3s ease;
-    }
-
-    .nav-link::after {
-        content: '';
-        position: absolute;
-        bottom: -8px;
-        left: 50%;
-        width: 0;
-        height: 3px;
-        background: linear-gradient(90deg, var(--brand-500), var(--brand-600));
-        border-radius: 2px;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        transform: translateX(-50%);
-    }
-
-    .nav-link.active::after,
-    .nav-link:hover::after {
-        width: 100%;
-    }
-
-    .reveal {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .reveal.is-visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    @media (prefers-reduced-motion: reduce) {
         * {
-            animation-duration: 0.01ms !important;
-            animation-iteration-count: 1 !important;
-            transition-duration: 0.01ms !important;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
         }
-    }
+
+        :root {
+            --brand-50: #eef2ff;
+            --brand-100: #e0e7ff;
+            --brand-300: #a5b4fc;
+            --brand-400: #818cf8;
+            --brand-500: #6366f1;
+            --brand-600: #4f46e5;
+            --brand-700: #4338ca;
+            --brand-800: #3730a3;
+            --brand-900: #312e81;
+            --surface: 255, 255, 255;
+            --surface-dark: 3, 7, 18;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-gradient::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%);
+            animation: gradientShift 20s ease infinite;
+        }
+
+        @keyframes gradientShift {
+
+            0%,
+            100% {
+                opacity: 0.9;
+            }
+
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .dark .glass-card {
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 35px 70px -12px rgba(0, 0, 0, 0.15);
+        }
+
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .floating-shape {
+            position: absolute;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-shape:nth-child(1) {
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-shape:nth-child(2) {
+            top: 20%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+
+        .floating-shape:nth-child(3) {
+            bottom: 20%;
+            left: 15%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--brand-600) 0%, var(--brand-700) 100%);
+            border: none;
+            border-radius: 50px;
+            padding: 16px 32px;
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 30px -12px rgba(79, 70, 229, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px -12px rgba(79, 70, 229, 0.6);
+        }
+
+        .nav-link {
+            position: relative;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--brand-500), var(--brand-600));
+            border-radius: 2px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateX(-50%);
+        }
+
+        .nav-link.active::after,
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        /* Mobile Responsive Improvements */
+        @media (max-width: 640px) {
+            .hero-gradient {
+                min-h-auto;
+                padding-top: 100px;
+                padding-bottom: 40px;
+            }
+
+            .hero-gradient h1 {
+                font-size: 2rem !important;
+                line-height: 1.2;
+            }
+
+            .floating-elements {
+                display: none;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                padding: 12px 20px !important;
+                font-size: 14px !important;
+            }
+
+            .grid {
+                gap: 1rem !important;
+            }
+
+            h2 {
+                font-size: 1.75rem !important;
+            }
+
+            h3 {
+                font-size: 1.125rem !important;
+            }
+
+            .gap-8 {
+                gap: 1rem !important;
+            }
+
+            .py-20 {
+                padding-top: 1.5rem !important;
+                padding-bottom: 1.5rem !important;
+            }
+
+            .text-lg {
+                font-size: 0.95rem !important;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            textarea,
+            select {
+                font-size: 16px !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.4s ease;
+                position: fixed;
+                top: 100%;
+                width: 100%;
+                z-index: 40;
+            }
+
+            .mobile-menu.open {
+                max-height: 500px;
+                overflow-y: auto;
+                transform: none;
+            }
+
+            .nav-link::after {
+                bottom: -4px;
+                height: 2px;
+            }
+        }
     </style>
 </head>
 
@@ -226,13 +315,43 @@
             </nav>
 
             <div class="flex items-center gap-4">
+                <a href="../auth/login.php"
+                    class="text-sm font-medium text-gray-700 hover:text-indigo-600 dark:text-gray-300 hidden sm:block">Staff
+                    Login</a>
+                <a href="../auth/register.php" class="btn-primary hidden sm:block">Register</a>
                 <a href="./admissions.php" class="btn-primary hidden sm:block">Apply Now</a>
-                <button class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
+                <button id="mobile-menu-button"
+                    class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
                 </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="mobile-menu fixed inset-x-0 top-full z-40 bg-white/95 backdrop-blur-md border-b border-gray-200/50 dark:bg-gray-950/95 dark:border-gray-800/50 md:hidden">
+            <div class="mx-auto max-w-7xl px-4 py-6">
+                <nav class="flex flex-col space-y-4">
+                    <a class="nav-link text-gray-700 hover:text-indigo-600 dark:text-gray-300 py-2"
+                        href="./index.php">Home</a>
+                    <a class="nav-link text-gray-700 hover:text-indigo-600 dark:text-gray-300 py-2"
+                        href="./about.php">About</a>
+                    <a class="nav-link text-gray-700 hover:text-indigo-600 dark:text-gray-300 py-2"
+                        href="./programs.php">Programs</a>
+                    <a class="nav-link text-gray-700 hover:text-indigo-600 dark:text-gray-300 py-2"
+                        href="./admissions.php">Admissions</a>
+                    <a class="nav-link text-gray-700 hover:text-indigo-600 dark:text-gray-300 py-2"
+                        href="./contact.php">Contact</a>
+                    <hr class="my-2 border-gray-200 dark:border-gray-700" />
+                    <a class="nav-link text-gray-700 hover:text-indigo-600 dark:text-gray-300 py-2"
+                        href="../auth/login.php">Staff Login</a>
+                    <a class="nav-link text-gray-700 hover:text-indigo-600 dark:text-gray-300 py-2"
+                        href="../auth/register.php">Staff Register</a>
+                    <a href="./admissions.php" class="btn-primary text-center mt-4">Apply Now</a>
+                </nav>
             </div>
         </div>
     </header>
@@ -278,7 +397,7 @@
         </div>
     </section>
 
-    <section class="py-20 bg-white dark:bg-gray-900">
+    <section class="py-20 bg-gradient-to-br from-yellow-50 to-amber-50 dark:from-yellow-950 dark:to-amber-900">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="grid gap-12 lg:grid-cols-2">
                 <div class="reveal">
@@ -505,17 +624,34 @@
     </footer>
 
     <script>
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((e) => {
-            if (e.isIntersecting) {
-                e.target.classList.add('is-visible');
-                observer.unobserve(e.target);
-            }
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('open');
+            });
+
+            // Close menu when clicking on a link
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('open');
+                });
+            });
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((e) => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('is-visible');
+                    observer.unobserve(e.target);
+                }
+            });
+        }, {
+            threshold: 0.15
         });
-    }, {
-        threshold: 0.15
-    });
-    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
     </script>
 </body>
 
