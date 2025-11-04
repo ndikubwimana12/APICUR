@@ -387,11 +387,10 @@
 </head>
 
 <body class="min-h-screen bg-gray-50 text-gray-900 antialiased dark:bg-gray-950 dark:text-gray-100">
-    <!-- Enhanced Header -->
     <header
         class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-200/50 dark:bg-gray-950/90 dark:border-gray-800/50">
         <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-            <a href="index.php" class="flex items-center gap-3 text-xl font-bold">
+            <a href="./index.php" class="flex items-center gap-3 text-xl font-bold">
                 <div
                     class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 text-white shadow-lg">
                     <span class="text-lg font-black">A</span>
@@ -403,9 +402,9 @@
             </a>
 
             <nav class="hidden gap-8 text-sm font-medium md:flex">
+                <a class="nav-link text-gray-700 hover:text-indigo-600 dark:text-gray-300" href="./index.php">Home</a>
                 <a class="nav-link active text-gray-700 hover:text-indigo-600 dark:text-gray-300"
-                    href="index.php">Home</a>
-                <a class="nav-link text-gray-700 hover:text-indigo-600 dark:text-gray-300" href="about.php">About</a>
+                    href="./about.php">About</a>
                 <a class="nav-link text-gray-700 hover:text-indigo-600 dark:text-gray-300"
                     href="./programs.php">Programs</a>
                 <a class="nav-link text-gray-700 hover:text-indigo-600 dark:text-gray-300"
@@ -414,18 +413,9 @@
                     href="./contact.php">Contact</a>
             </nav>
 
-            <div class="flex items-center gap-3">
-                <a href="../auth/login.php"
-                    class="hidden sm:inline-block px-4 py-2 text-sm font-medium text-indigo-600 hover:text-indigo-700 transition">
-                    <i class="fas fa-sign-in-alt mr-1"></i> Login
-                </a>
-                <a href="../auth/register.php"
-                    class="hidden sm:inline-block px-4 py-2 text-sm font-medium bg-indigo-600 text-white rounded-full hover:bg-indigo-700 transition shadow-md">
-                    <i class="fas fa-user-plus mr-1"></i> Staff Portal
-                </a>
+            <div class="flex items-center gap-4">
                 <a href="./admissions.php" class="btn-primary hidden sm:block">Apply Now</a>
-                <button id="mobile-menu-button"
-                    class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                <button class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M4 6h16M4 12h16M4 18h16"></path>
@@ -433,37 +423,8 @@
                 </button>
             </div>
         </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu"
-            class="mobile-menu md:hidden bg-white/95 dark:bg-gray-950/95 backdrop-blur-md border-t border-gray-200/50 dark:border-gray-800/50">
-            <div class="px-4 py-6 space-y-4">
-                <a class="nav-link block text-gray-700 hover:text-indigo-600 dark:text-gray-300 py-2"
-                    href="index.php">Home</a>
-                <a class="nav-link block text-gray-700 hover:text-indigo-600 dark:text-gray-300 py-2"
-                    href="about.php">About</a>
-                <a class="nav-link block text-gray-700 hover:text-indigo-600 dark:text-gray-300 py-2"
-                    href="./programs.php">Programs</a>
-                <a class="nav-link block text-gray-700 hover:text-indigo-600 dark:text-gray-300 py-2"
-                    href="./admissions.php">Admissions</a>
-                <a class="nav-link block text-gray-700 hover:text-indigo-600 dark:text-gray-300 py-2"
-                    href="./contact.php">Contact</a>
-                <div class="pt-4 border-t border-gray-200 dark:border-gray-800 space-y-3">
-                    <a href="../auth/login.php"
-                        class="block w-full text-center px-4 py-2 text-sm font-medium text-indigo-600 border-2 border-indigo-600 rounded-full hover:bg-indigo-50">
-                        <i class="fas fa-sign-in-alt mr-1"></i> Login
-                    </a>
-                    <a href="../auth/register.php"
-                        class="block w-full text-center px-4 py-2 text-sm font-medium bg-indigo-600 text-white rounded-full hover:bg-indigo-700">
-                        <i class="fas fa-user-plus mr-1"></i> Staff Portal
-                    </a>
-                    <a href="./admissions.php" class="btn-primary w-full text-center">Apply Now</a>
-                </div>
-            </div>
-        </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero-gradient min-h-screen flex items-center pt-20">
         <div class="floating-elements">
             <div class="floating-shape w-20 h-20 bg-white rounded-full"></div>
@@ -472,178 +433,191 @@
         </div>
 
         <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div class="grid gap-16 lg:grid-cols-2 lg:items-center">
-                <div class="reveal text-center lg:text-left">
-                    <div
-                        class="inline-flex items-center rounded-full bg-white/20 backdrop-blur-sm px-4 py-2 text-sm font-medium text-white mb-8">
-                        <span class="h-2 w-2 bg-green-400 rounded-full mr-2"></span>
-                        Admissions Open • Musanze, Rwanda
-                    </div>
+            <div class="floating-elements">
+                <div class="floating-shape w-20 h-20 bg-white rounded-full"></div>
+                <div class="floating-shape w-16 h-16 bg-indigo-200 rounded-lg"></div>
+                <div class="floating-shape w-24 h-24 bg-purple-200 rounded-full"></div>
+            </div>
 
-                    <h1 class="text-5xl font-black tracking-tight text-white sm:text-6xl lg:text-7xl">
-                        Shape Your
-                        <span
-                            class="block bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">
-                            Future
-                        </span>
-                        Today
-                    </h1>
-
-                    <p class="mt-8 text-xl leading-relaxed text-white/90 max-w-2xl">
-                        Excellence in O'Level education and cutting-edge technical training in Software Development,
-                        Tourism,
-                        Building Construction, and Computer Systems. Where innovation meets opportunity.
-                    </p>
-
-                    <!-- Announcements Ticker -->
-                    <div class="mt-10 mb-6 bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/20">
-                        <div class="flex items-center gap-3 mb-2">
-                            <div
-                                class="inline-flex items-center rounded-full bg-red-500/20 backdrop-blur-sm px-3 py-1 text-xs font-bold text-red-300 border border-red-400/30">
-                                <span class="w-2 h-2 bg-red-400 rounded-full mr-2 animate-pulse"></span>
-                                LIVE UPDATES
-                            </div>
-                        </div>
-                        <div class="overflow-hidden">
-                            <div class="ticker-scroll flex gap-6 text-white/90 font-medium text-sm"
-                                style="animation: scroll 20s linear infinite;">
-                                <span class="whitespace-nowrap">🎓 Admissions for next term now open - Apply by March
-                                    15th</span>
-                                <span class="whitespace-nowrap">🚀 New Robotics & AI lab officially launched</span>
-                                <span class="whitespace-nowrap">💼 Career fair featuring top tech companies - March
-                                    20th</span>
-                                <span class="whitespace-nowrap">🏆 Our students won Regional Coding Championship</span>
-                                <span class="whitespace-nowrap">🎓 Admissions for next term now open - Apply by March
-                                    15th</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mt-12 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <a href="./programs.php" class="btn-primary text-lg px-8 py-4">
-                            Explore Programs
-                            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M13 7l5 5m0 0l-5 5m5-5H6">
-                                </path>
-                            </svg>
-                        </a>
-                        <a href="./about.php#campus" class="btn-secondary text-lg px-8 py-4">
-                            Virtual Tour
-                            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                            </svg>
-                        </a>
-                    </div>
-
-                    <!-- Key Stats -->
-                    <div class="mt-16 grid grid-cols-3 gap-8 text-center">
-                        <div>
-                            <div class="stats-counter text-white">500+</div>
-                            <div class="text-white/80 font-medium">Students</div>
-                        </div>
-                        <div>
-                            <div class="stats-counter text-white">95%</div>
-                            <div class="text-white/80 font-medium">Success Rate</div>
-                        </div>
-                        <div>
-                            <div class="stats-counter text-white">10+</div>
-                            <div class="text-white/80 font-medium">Years Excellence</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="reveal lg:pl-8">
-                    <div class="glass-card p-8 max-w-lg mx-auto">
+            <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="grid gap-16 lg:grid-cols-2 lg:items-center">
+                    <div class="reveal text-center lg:text-left">
                         <div
-                            class="w-full h-80 rounded-2xl shadow-2xl bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 flex items-center justify-center relative overflow-hidden">
-                            <!-- Animated background elements -->
-                            <div class="absolute inset-0 opacity-10">
-                                <div class="absolute top-10 left-10 w-20 h-20 bg-indigo-400 rounded-full animate-bounce"
-                                    style="animation-delay: 0s;"></div>
-                                <div class="absolute top-20 right-20 w-16 h-16 bg-purple-400 rounded-lg animate-bounce"
-                                    style="animation-delay: 1s;"></div>
-                                <div class="absolute bottom-20 left-20 w-12 h-12 bg-blue-400 rounded-full animate-bounce"
-                                    style="animation-delay: 2s;"></div>
-                                <div class="absolute bottom-10 right-10 w-18 h-18 bg-pink-400 rounded-lg animate-bounce"
-                                    style="animation-delay: 0.5s;"></div>
-                            </div>
+                            class="inline-flex items-center rounded-full bg-white/20 backdrop-blur-sm px-4 py-2 text-sm font-medium text-white mb-8">
+                            <span class="h-2 w-2 bg-green-400 rounded-full mr-2"></span>
+                            Admissions Open • Musanze, Rwanda
+                        </div>
 
-                            <!-- Main illustration -->
-                            <div class="relative z-10 text-center">
-                                <div class="mb-6">
-                                    <svg class="w-32 h-32 mx-auto text-indigo-600 dark:text-indigo-400" fill="none"
-                                        stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                            d="M8.5 8h7m-7 4h7m-7 4h7" />
-                                    </svg>
+                        <h1 class="text-5xl font-black tracking-tight text-white sm:text-6xl lg:text-7xl">
+                            Shape Your
+                            <span
+                                class="block bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">
+                                Future
+                            </span>
+                            Today
+                        </h1>
+
+                        <p class="mt-2 text-xl leading-relaxed text-white/90 max-w-2xl">
+                            Excellence in O'Level education and cutting-edge technical training in Software Development,
+                            Tourism,
+                            Building Construction, and Computer Systems. Where innovation meets opportunity.
+                        </p>
+
+                        <!-- Announcements Ticker -->
+                        <div class="mt-10 mb-6 bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/20">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div
+                                    class="inline-flex items-center rounded-full bg-red-500/20 backdrop-blur-sm px-3 py-1 text-xs font-bold text-red-300 border border-red-400/30">
+                                    <span class="w-2 h-2 bg-red-400 rounded-full mr-2 animate-pulse"></span>
+                                    LIVE UPDATES
                                 </div>
-                                <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Future Leaders</h3>
-                                <p class="text-gray-600 dark:text-gray-300 text-sm max-w-xs mx-auto">
-                                    Where innovation meets education, shaping tomorrow's innovators today
-                                    <span class="inline-block animate-pulse">✨</span>
-                                </p>
                             </div>
-
-                            <!-- Floating achievement badges -->
-                            <div
-                                class="absolute top-4 right-4 bg-white/90 dark:bg-gray-800/90 rounded-full p-2 shadow-lg animate-pulse">
-                                <svg class="w-6 h-6 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
-                                    <path
-                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                </svg>
-                            </div>
-                            <div class="absolute bottom-4 left-4 bg-white/90 dark:bg-gray-800/90 rounded-full p-2 shadow-lg animate-pulse"
-                                style="animation-delay: 1s;">
-                                <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd" />
-                                </svg>
+                            <div class="overflow-hidden">
+                                <div class="ticker-scroll flex gap-6 text-white/90 font-medium text-sm"
+                                    style="animation: scroll 20s linear infinite;">
+                                    <span class="whitespace-nowrap">🎓 Admissions for next term now open - Apply by
+                                        March
+                                        15th</span>
+                                    <span class="whitespace-nowrap">🚀 New Robotics & AI lab officially launched</span>
+                                    <span class="whitespace-nowrap">💼 Career fair featuring top tech companies - March
+                                        20th</span>
+                                    <span class="whitespace-nowrap">🏆 Our students won Regional Coding
+                                        Championship</span>
+                                    <span class="whitespace-nowrap">🎓 Admissions for next term now open - Apply by
+                                        March
+                                        15th</span>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="mt-6 space-y-4">
-                            <div class="flex items-center gap-3">
+                        <div class="mt-12 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                            <a href="./programs.php" class="btn-primary text-lg px-8 py-4">
+                                Explore Programs
+                                <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 7l5 5m0 0l-5 5m5-5H6">
+                                    </path>
+                                </svg>
+                            </a>
+                            <a href="./about.php#campus" class="btn-secondary text-lg px-8 py-4">
+                                Virtual Tour
+                                <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                                </svg>
+                            </a>
+                        </div>
+
+                        <!-- Key Stats -->
+                        <div class="mt-16 grid grid-cols-3 gap-8 text-center">
+                            <div>
+                                <div class="stats-counter text-white">500+</div>
+                                <div class="text-white/80 font-medium">Students</div>
+                            </div>
+                            <div>
+                                <div class="stats-counter text-white">95%</div>
+                                <div class="text-white/80 font-medium">Success Rate</div>
+                            </div>
+                            <div>
+                                <div class="stats-counter text-white">10+</div>
+                                <div class="text-white/80 font-medium">Years Excellence</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reveal lg:pl-8">
+                        <div class="glass-card p-8 max-w-lg mx-auto">
+                            <div
+                                class="w-full h-80 rounded-2xl shadow-2xl bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 flex items-center justify-center relative overflow-hidden">
+                                <!-- Animated background elements -->
+                                <div class="absolute inset-0 opacity-10">
+                                    <div class="absolute top-10 left-10 w-20 h-20 bg-indigo-400 rounded-full animate-bounce"
+                                        style="animation-delay: 0s;"></div>
+                                    <div class="absolute top-20 right-20 w-16 h-16 bg-purple-400 rounded-lg animate-bounce"
+                                        style="animation-delay: 1s;"></div>
+                                    <div class="absolute bottom-20 left-20 w-12 h-12 bg-blue-400 rounded-full animate-bounce"
+                                        style="animation-delay: 2s;"></div>
+                                    <div class="absolute bottom-10 right-10 w-18 h-18 bg-pink-400 rounded-lg animate-bounce"
+                                        style="animation-delay: 0.5s;"></div>
+                                </div>
+
+                                <!-- Main illustration -->
+                                <div class="relative z-10 text-center">
+                                    <div class="mb-6">
+                                        <svg class="w-32 h-32 mx-auto text-indigo-600 dark:text-indigo-400" fill="none"
+                                            stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                                d="M8.5 8h7m-7 4h7m-7 4h7" />
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Future Leaders
+                                    </h3>
+                                    <p class="text-gray-600 dark:text-gray-300 text-sm max-w-xs mx-auto">
+                                        Where innovation meets education, shaping tomorrow's innovators today
+                                        <span class="inline-block animate-pulse">✨</span>
+                                    </p>
+                                </div>
+
+                                <!-- Floating achievement badges -->
                                 <div
-                                    class="h-12 w-12 rounded-full bg-gradient-to-r from-green-400 to-emerald-500 flex items-center justify-center">
-                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    class="absolute top-4 right-4 bg-white/90 dark:bg-gray-800/90 rounded-full p-2 shadow-lg animate-pulse">
+                                    <svg class="w-6 h-6 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                     </svg>
                                 </div>
-                                <div>
-                                    <div class="font-semibold text-gray-900 dark:text-white">Industry-Ready Skills</div>
-                                    <div class="text-sm text-gray-600 dark:text-gray-300">Hands-on labs and real
-                                        projects</div>
+                                <div class="absolute bottom-4 left-4 bg-white/90 dark:bg-gray-800/90 rounded-full p-2 shadow-lg animate-pulse"
+                                    style="animation-delay: 1s;">
+                                    <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                            clip-rule="evenodd" />
+                                    </svg>
                                 </div>
                             </div>
 
-                            <div class="flex items-center gap-3">
-                                <div
-                                    class="h-12 w-12 rounded-full bg-gradient-to-r from-blue-400 to-indigo-500 flex items-center justify-center">
-                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z">
-                                        </path>
-                                    </svg>
+                            <div class="mt-6 space-y-4">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="h-12 w-12 rounded-full bg-gradient-to-r from-green-400 to-emerald-500 flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-gray-900 dark:text-white">Industry-Ready Skills
+                                        </div>
+                                        <div class="text-sm text-gray-600 dark:text-gray-300">Hands-on labs and real
+                                            projects</div>
+                                    </div>
                                 </div>
-                                <div>
-                                    <div class="font-semibold text-gray-900 dark:text-white">Expert Mentorship</div>
-                                    <div class="text-sm text-gray-600 dark:text-gray-300">Industry professionals guide
-                                        you</div>
+
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="h-12 w-12 rounded-full bg-gradient-to-r from-blue-400 to-indigo-500 flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-gray-900 dark:text-white">Expert Mentorship</div>
+                                        <div class="text-sm text-gray-600 dark:text-gray-300">Industry professionals
+                                            guide
+                                            you</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
 
     <style>
